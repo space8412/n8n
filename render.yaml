@@ -4,6 +4,7 @@ services:
     env: node
     buildCommand: |
       corepack enable
+      corepack prepare yarn@3.6.4 --activate
       yarn install
       yarn build
     startCommand: yarn start
