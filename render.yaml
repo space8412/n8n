@@ -6,12 +6,10 @@ services:
       npm install -g corepack
       corepack enable
       corepack prepare yarn@3.6.1 --activate
-      yarn set version 3.6.1
-      echo "✅ Yarn Version Check:"
       yarn --version
       yarn install
       yarn build
-    startCommand: yarn start
+    startCommand: corepack yarn start
     envVars:
       - key: WEBHOOK_TUNNEL_URL
         value: https://n8n-selfhosted-h1pq.onrender.com
