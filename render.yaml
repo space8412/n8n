@@ -3,13 +3,11 @@ services:
     name: n8n-selfhosted
     env: node
     buildCommand: |
-      npm install -g corepack
       corepack enable
-      corepack prepare yarn@3.6.1 --activate
-      yarn --version
-      yarn install
-      yarn build
-    startCommand: corepack yarn start
+      corepack prepare pnpm@10.2.1 --activate
+      pnpm install
+      pnpm build
+    startCommand: pnpm start
     envVars:
       - key: WEBHOOK_TUNNEL_URL
         value: https://n8n-selfhosted-h1pq.onrender.com
