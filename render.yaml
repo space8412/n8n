@@ -5,7 +5,8 @@ services:
     buildCommand: |
       npm install -g corepack
       corepack enable
-      corepack prepare yarn@10.2.1 --activate
+      corepack prepare yarn@3.6.1 --activate
+      yarn set version 3.6.1
       yarn install
       yarn build
     startCommand: yarn start
