@@ -2,7 +2,10 @@ services:
   - type: web
     name: n8n-selfhosted
     env: node
-    buildCommand: corepack enable && yarn install && yarn build
+    buildCommand: |
+      corepack enable
+      yarn install
+      yarn build
     startCommand: yarn start
     envVars:
       - key: WEBHOOK_TUNNEL_URL
