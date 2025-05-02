@@ -5,6 +5,7 @@ services:
     plan: free
     buildCommand: |
       corepack enable
+      corepack prepare yarn@3.1.1 --activate
       yarn install
       yarn build
     startCommand: yarn start
